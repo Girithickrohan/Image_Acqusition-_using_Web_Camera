@@ -1,5 +1,5 @@
 
-Aim:
+## Aim:
  
 To write a python program using OpenCV to capture the image from the web camera and do the following image manipulations.
 i) Write the frame as JPG 
@@ -33,10 +33,8 @@ End the program and close the output video window by pressing 'q'.
 ```
 import cv2
 viedoCaptureObject=cv2.VideoCapture(0)
-
 ret,frame=viedoCaptureObject.read()
 cv2.imwrite("webcam_img.jpg",frame)
-
 viedoCaptureObject.release()
 cv2.destroyAllWindows()
 ```
@@ -45,15 +43,10 @@ cv2.destroyAllWindows()
 ```
 import numpy as np
 import cv2
-
 cap = cv2.VideoCapture(0)
 ret, frame = cap.read()
-
 cv2.imshow('captured_frame', frame)
-
 cv2.waitKey(10000)
-
-
 cap.release()
 cv2.destroyAllWindows()
 
@@ -63,7 +56,6 @@ cv2.destroyAllWindows()
 import numpy as np
 import cv2
 cap=cv2.VideoCapture(0)
-
 ret,frame=cap.read()
 width=int(cap.get(3))
 height=int(cap.get(4))
@@ -73,14 +65,10 @@ image[:height//2, :width//2]=smaller_frame
 image[height//2:, :width//2]=smaller_frame
 image[:height//2, width//2:]=smaller_frame
 image[height//2:, width//2:]=smaller_frame
-
 cv2.imshow('212222240110_Thiyagarajan',image)
-
 cv2.waitKey(5000)  
-
 image_dict = {'captured_image1': image}
 cv2.imwrite('captured_image1.jpg', image)
-
 cap.release()
 cv2.destroyAllWindows()
 ```
@@ -91,7 +79,6 @@ cv2.destroyAllWindows()
 import numpy as np
 import cv2
 cap=cv2.VideoCapture(0)
-
 ret,frame=cap.read()
 width=int(cap.get(3))
 height=int(cap.get(4))
@@ -101,37 +88,30 @@ image[:height//2, :width//2]=cv2.rotate(smaller_frame,cv2.ROTATE_180)
 image[height//2:, :width//2]=smaller_frame
 image[:height//2, width//2:]=cv2.rotate(smaller_frame,cv2.ROTATE_180)
 image[height//2:, width//2:]=smaller_frame
-
 cv2.imshow('212222240110',image)
-
 cv2.waitKey(5000) 
-
 image_dict = {'captured_image2': image}
 cv2.imwrite('captured_image2.jpg', image)
-
 cap.release()
 cv2.destroyAllWindows()
 ```
 
-
 ## Output
 
 ### i) Write the frame as JPG image
-
-![webcam_img]()
+![webcam_img](https://raw.githubusercontent.com/Girithickrohan/Image_Acqusition-_using_Web_Camera/main/1.png)
 
 
 ### ii) Display the video
-![captured_frame]()
+![captured_frame](https://raw.githubusercontent.com/Girithickrohan/Image_Acqusition-_using_Web_Camera/main/2.png)
 
 ### iii) Display the video by resizing the window
-
-![captured_img1]()
+![captured_img1](https://raw.githubusercontent.com/Girithickrohan/Image_Acqusition-_using_Web_Camera/main/3.png)
 
 
 ### iv) Rotate and display the video
 
-![captured_img2]()
+![captured_img2](https://raw.githubusercontent.com/Girithickrohan/Image_Acqusition-_using_Web_Camera/main/4.png)
 
 
 ## Result:
